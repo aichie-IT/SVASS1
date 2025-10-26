@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Define the URL for the data source
-URL = 'https://raw.githubusercontent.com/aichie-IT/SV25/refs/heads/main/arts_faculty_data.csv'
+URL = 'https://raw.githubusercontent.com/aichie-IT/SVASS1/refs/heads/main/arts_faculty_data.csv'
 
 # Set Streamlit page configuration
 st.set_page_config(
