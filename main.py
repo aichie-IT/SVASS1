@@ -127,40 +127,50 @@ st.plotly_chart(fig_box, use_container_width=True)
 col5, col6 = st.columns([1.3, 1])
 
 with col5:
+    major_counts = df['Major'].value_counts().reset_index()
+    major_counts.columns = ['Major', 'Count']  # ✅ rename columns properly
     fig_major = px.bar(
-        df['Major'].value_counts().reset_index(),
-        x='count',
-        y='index',
+        major_counts,
+        x='Count',
+        y='Major',
         orientation='h',
         title='Student Distribution by Major',
-        color_discrete_sequence=color_theme
+        color='Count',
+        color_continuous_scale=color_theme
     )
     fig_major.update_layout(xaxis_title='Count', yaxis_title='Major')
     st.plotly_chart(fig_major, use_container_width=True)
 
 with col6:
+    usage_counts = df['Usage_Frequency'].value_counts().reset_index()
+    usage_counts.columns = ['Usage_Frequency', 'Count']  # ✅ rename columns properly
     fig_usage = px.bar(
-        df['Usage_Frequency'].value_counts().reset_index(),
-        x='index',
-        y='count',
+        usage_counts,
+        x='Usage_Frequency',
+        y='Count',
         title='Usage Frequency of Online Tools',
-        color_discrete_sequence=color_theme
+        color='Count',
+        color_continuous_scale=color_theme
     )
     fig_usage.update_layout(xaxis_title='Usage Frequency', yaxis_title='Count')
     st.plotly_chart(fig_usage, use_container_width=True)
 
 # --- ROW 6: Challenges Faced ---
 st.subheader("🚧 Challenges Faced by Students")
+challenge_counts = df['Challenges_Faced'].value_counts().reset_index()
+challenge_counts.columns = ['Challenges_Faced', 'Count']  # ✅ rename columns properly
 fig_challenges = px.bar(
-    df['Challenges_Faced'].value_counts().reset_index(),
-    x='count',
-    y='index',
+    challenge_counts,
+    x='Count',
+    y='Challenges_Faced',
     orientation='h',
     title='Challenges Faced by Students',
-    color_discrete_sequence=color_theme
+    color='Count',
+    color_continuous_scale=color_theme
 )
 fig_challenges.update_layout(xaxis_title='Count', yaxis_title='Challenges')
 st.plotly_chart(fig_challenges, use_container_width=True)
+
 
 # --- FOOTER ---
 st.markdown("---")
