@@ -6,7 +6,7 @@ import plotly.express as px
 st.set_page_config(page_title="Student Dashboard", layout="wide")
 
 # --- LOAD DATA ---
-df = pd.read_csv("your_dataset.csv")  # <-- replace with your actual file path
+df = pd.read_csv("student_dataset.csv")  # <-- replace with your actual file path
 
 # Handle NaN values safely
 df['Challenges_Faced'] = df['Challenges_Faced'].fillna('No Response')
