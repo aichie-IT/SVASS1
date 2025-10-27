@@ -1,0 +1,121 @@
+Student_ID,University,Year_of_Study,Major,Gender,Age,Online_Tool_Used,Usage_Frequency,Satisfaction_Score,Accessibility_Score,Impact_on_Learning,Challenges_Faced,Preferred_Features,Suggestions_for_Improvement
+S001,South East European University,2nd,Economics,Female,23,Blackboard Collaborate,Monthly,4,3,5,Security concerns,Familiarity,Add more interactive tools
+S002,South East European University,4th,Engineering,Female,19,Moodle,Monthly,4,5,4,No Response,Simplicity,No Response
+S003,Mother Teresa University,4th,Law,Male,19,MS Teams,Monthly,5,4,5,Learning curve,User interface,Enhance login security
+S004,South East European University,3rd,Engineering,Female,25,Google Classroom,Daily,5,3,3,No Response,Resource access,No Response
+S005,Saint Cyril and Methodious University,3rd,Art,Female,18,Google Classroom,Monthly,5,3,4,Bandwidth issues,Assignment tracking,Optimize for low bandwidth
+S006,Mother Teresa University,4th,Chemistry,Female,24,Google Meet,Weekly,4,5,4,Technical glitches,Chat function,Improve reliability
+S007,Mother Teresa University,4th,Law,Male,25,Canvas,Weekly,3,4,4,Login issues,Chat function,Optimize for low bandwidth
+S008,Mother Teresa University,3rd,Engineering,Male,19,Blackboard Collaborate,Weekly,3,4,5,Technical glitches,Familiarity,More intuitive interface
+S009,South East European University,4th,History,Female,18,Canvas,Weekly,4,4,4,Outdated interface,Familiarity,Strengthen security features
+S010,Mother Teresa University,2nd,Economics,Female,24,Canvas,Monthly,5,5,3,Login issues,Easy navigation,No Response
+S011,Mother Teresa University,1st,Business Administration,Female,25,Google Meet,Daily,3,4,5,Security concerns,Resource access,Strengthen security features
+S012,Saint Cyril and Methodious University,2nd,Physics,Female,24,Google Classroom,Weekly,3,4,4,No Response,User interface,Improve reliability
+S013,Saint Cyril and Methodious University,1st,Engineering,Male,22,Google Meet,Daily,5,5,5,Security concerns,Recording feature,Optimize performance
+S014,Saint Cyril and Methodious University,2nd,Computer Science,Female,19,Moodle,Weekly,3,3,4,Learning curve,Screen sharing,Modernize user interface
+S015,Mother Teresa University,1st,Chemistry,Female,19,Moodle,Daily,4,3,4,Learning curve,Easy navigation,Strengthen security features
+S016,Saint Cyril and Methodious University,4th,Philosophy,Male,25,Canvas,Monthly,3,3,4,Learning curve,Video quality,Enhance login security
+S017,Mother Teresa University,4th,Psychology,Male,24,MS Teams,Monthly,4,5,3,Login issues,Easy navigation,Modernize user interface
+S018,Mother Teresa University,3rd,Law,Female,25,Skype,Daily,4,5,5,Learning curve,Familiarity,Optimize performance
+S019,Saint Cyril and Methodious University,1st,Art,Male,18,Google Meet,Weekly,5,3,3,Security concerns,Easy navigation,More intuitive interface
+S020,Mother Teresa University,4th,History,Male,23,Google Classroom,Weekly,4,4,4,No Response,Assignment tracking,Add more interactive tools
+S021,Saint Cyril and Methodious University,4th,History,Female,23,Zoom,Daily,3,5,3,Learning curve,Familiarity,Provide tutorials
+S022,Saint Cyril and Methodious University,1st,Business Administration,Female,19,Google Classroom,Monthly,3,4,4,No Response,Screen sharing,Improve reliability
+S023,Mother Teresa University,1st,Computer Science,Male,19,Blackboard Collaborate,Weekly,3,4,3,Bandwidth issues,Video quality,Provide tutorials
+S024,Mother Teresa University,4th,Business Administration,Female,24,Skype,Monthly,3,3,5,Outdated interface,Breakout rooms,Strengthen security features
+S025,Mother Teresa University,1st,Business Administration,Female,25,Zoom,Daily,5,5,5,Bandwidth issues,Simplicity,Improved stability
+S026,Saint Cyril and Methodious University,1st,Chemistry,Female,25,Moodle,Monthly,5,4,5,Outdated interface,Familiarity,No Response
+S027,Mother Teresa University,4th,Computer Science,Male,23,Blackboard Collaborate,Daily,3,4,5,Learning curve,Video quality,No Response
+S028,Mother Teresa University,3rd,Economics,Female,24,Moodle,Monthly,5,3,4,No Response,Simplicity,Improved stability
+S029,Saint Cyril and Methodious University,1st,Chemistry,Female,20,MS Teams,Monthly,4,3,4,Learning curve,Breakout rooms,Add more interactive tools
+S030,Mother Teresa University,4th,Literature,Female,21,Skype,Daily,4,3,5,Technical glitches,Recording feature,Modernize user interface
+S031,Mother Teresa University,4th,Economics,Female,18,Blackboard Collaborate,Daily,5,3,3,Learning curve,Chat function,Modernize user interface
+S032,Saint Cyril and Methodious University,3rd,Physics,Male,20,Google Classroom,Daily,4,3,4,Bandwidth issues,Breakout rooms,Modernize user interface
+S033,Mother Teresa University,2nd,Economics,Male,21,Zoom,Monthly,4,3,5,Security concerns,Screen sharing,Strengthen security features
+S034,Saint Cyril and Methodious University,2nd,Business Administration,Female,23,Zoom,Weekly,5,3,5,Bandwidth issues,Video quality,Modernize user interface
+S035,Saint Cyril and Methodious University,2nd,Psychology,Male,22,Blackboard Collaborate,Monthly,4,5,3,Outdated interface,User interface,Optimize for low bandwidth
+S036,Saint Cyril and Methodious University,2nd,Computer Science,Female,25,Zoom,Monthly,3,4,5,Outdated interface,Recording feature,Optimize for low bandwidth
+S037,Saint Cyril and Methodious University,4th,Chemistry,Female,24,Google Classroom,Daily,5,3,5,No Response,Easy navigation,Optimize for low bandwidth
+S038,South East European University,3rd,History,Female,19,Canvas,Daily,3,4,5,Security concerns,Simplicity,Improved stability
+S039,Saint Cyril and Methodious University,4th,History,Male,19,Zoom,Monthly,5,3,5,Learning curve,Easy navigation,Modernize user interface
+S040,South East European University,4th,Law,Female,25,Google Classroom,Weekly,3,5,3,Outdated interface,Recording feature,Improve reliability
+S041,Mother Teresa University,2nd,Philosophy,Male,19,Blackboard Collaborate,Monthly,3,3,5,Outdated interface,Familiarity,Strengthen security features
+S042,South East European University,4th,Economics,Female,18,Google Classroom,Monthly,5,3,3,Outdated interface,Familiarity,No Response
+S043,Saint Cyril and Methodious University,1st,History,Male,20,Blackboard Collaborate,Monthly,4,3,5,Login issues,Familiarity,Provide tutorials
+S044,Saint Cyril and Methodious University,1st,Mathematics,Male,24,Skype,Monthly,5,5,4,Login issues,Recording feature,Improved stability
+S045,Saint Cyril and Methodious University,3rd,History,Male,25,Blackboard Collaborate,Daily,3,3,4,Technical glitches,Integration features,Optimize for low bandwidth
+S046,South East European University,3rd,Computer Science,Male,19,Google Meet,Daily,5,5,4,Login issues,Recording feature,Enhance login security
+S047,South East European University,1st,Computer Science,Male,21,Zoom,Daily,5,5,3,Bandwidth issues,Familiarity,Enhance login security
+S048,Mother Teresa University,2nd,Law,Male,23,Zoom,Weekly,5,4,5,Login issues,Video quality,Improved stability
+S049,Mother Teresa University,3rd,Business Administration,Male,25,MS Teams,Monthly,5,4,3,Bandwidth issues,Integration features,Enhance login security
+S050,Saint Cyril and Methodious University,1st,Literature,Male,18,Google Classroom,Weekly,5,3,4,No Response,Chat function,Modernize user interface
+S051,South East European University,3rd,Biology,Female,18,Blackboard Collaborate,Daily,4,3,3,No Response,Integration features,Strengthen security features
+S052,Saint Cyril and Methodious University,4th,Law,Female,22,Moodle,Daily,3,4,3,Bandwidth issues,Resource access,Modernize user interface
+S053,South East European University,3rd,Economics,Male,21,Canvas,Weekly,5,3,5,Technical glitches,Collaboration tools,More intuitive interface
+S054,South East European University,4th,Biology,Female,25,Canvas,Weekly,5,5,4,Bandwidth issues,Simplicity,No Response
+S055,Saint Cyril and Methodious University,2nd,Business Administration,Male,22,Blackboard Collaborate,Daily,5,4,5,Outdated interface,Chat function,Strengthen security features
+S056,Saint Cyril and Methodious University,3rd,Engineering,Male,25,MS Teams,Weekly,4,5,5,Outdated interface,Recording feature,Enhance login security
+S057,Saint Cyril and Methodious University,2nd,Physics,Female,24,Canvas,Weekly,4,4,4,Login issues,Simplicity,Provide tutorials
+S058,Saint Cyril and Methodious University,1st,Psychology,Female,24,Blackboard Collaborate,Monthly,4,3,5,No Response,Integration features,Improved stability
+S059,South East European University,4th,Biology,Male,18,Google Classroom,Daily,3,4,4,Learning curve,Chat function,No Response
+S060,South East European University,1st,Philosophy,Male,24,Zoom,Weekly,3,5,3,Learning curve,User interface,Improve reliability
+S061,South East European University,4th,Business Administration,Male,20,Zoom,Daily,4,3,5,Learning curve,Integration features,Enhance login security
+S062,Mother Teresa University,3rd,Literature,Male,24,Google Meet,Daily,5,3,5,Learning curve,Resource access,More intuitive interface
+S063,South East European University,4th,Engineering,Male,18,MS Teams,Weekly,4,3,5,No Response,Resource access,Improved stability
+S064,Saint Cyril and Methodious University,4th,Art,Male,21,Skype,Daily,3,4,3,No Response,Breakout rooms,Optimize for low bandwidth
+S065,Saint Cyril and Methodious University,4th,History,Female,25,Zoom,Monthly,5,4,5,No Response,Easy navigation,Provide tutorials
+S066,Mother Teresa University,3rd,Psychology,Female,23,MS Teams,Daily,4,3,3,Bandwidth issues,Easy navigation,Add more interactive tools
+S067,South East European University,1st,Mathematics,Female,22,Google Meet,Weekly,5,3,4,Login issues,Recording feature,Modernize user interface
+S068,South East European University,2nd,Economics,Female,25,Canvas,Weekly,3,3,5,Security concerns,Familiarity,Optimize performance
+S069,Saint Cyril and Methodious University,3rd,Physics,Female,23,Blackboard Collaborate,Weekly,4,3,3,Technical glitches,Breakout rooms,No Response
+S070,Mother Teresa University,4th,Medicine,Female,25,Skype,Daily,5,5,4,Bandwidth issues,Video quality,Modernize user interface
+S071,Mother Teresa University,4th,Art,Male,22,Skype,Weekly,3,3,4,Technical glitches,Screen sharing,Optimize for low bandwidth
+S072,Mother Teresa University,4th,Psychology,Female,20,Skype,Weekly,3,4,4,Outdated interface,Integration features,Improved stability
+S073,Saint Cyril and Methodious University,2nd,Literature,Female,18,Blackboard Collaborate,Weekly,5,4,4,Outdated interface,Familiarity,Provide tutorials
+S074,South East European University,4th,Economics,Male,23,Blackboard Collaborate,Daily,5,5,4,Security concerns,Resource access,Improve reliability
+S075,South East European University,1st,History,Male,19,Google Meet,Monthly,3,4,4,No Response,Easy navigation,Strengthen security features
+S076,Saint Cyril and Methodious University,3rd,Philosophy,Male,24,Blackboard Collaborate,Daily,5,5,4,Bandwidth issues,Screen sharing,Improved stability
+S077,Mother Teresa University,4th,Economics,Female,25,MS Teams,Monthly,4,5,5,Learning curve,Breakout rooms,Add more interactive tools
+S078,Mother Teresa University,3rd,Physics,Female,21,Skype,Daily,5,3,4,Technical glitches,User interface,Modernize user interface
+S079,South East European University,2nd,Biology,Female,20,Google Classroom,Monthly,5,4,3,Learning curve,User interface,Modernize user interface
+S080,Saint Cyril and Methodious University,3rd,Mathematics,Male,22,Skype,Daily,4,4,5,Bandwidth issues,User interface,Optimize performance
+S081,Mother Teresa University,2nd,Physics,Male,22,MS Teams,Daily,3,5,5,Outdated interface,Assignment tracking,Provide tutorials
+S082,Mother Teresa University,3rd,Computer Science,Female,19,Skype,Daily,3,3,3,Security concerns,Simplicity,No Response
+S083,South East European University,1st,Philosophy,Male,20,MS Teams,Monthly,4,5,4,Security concerns,User interface,Modernize user interface
+S084,Mother Teresa University,1st,Business Administration,Female,24,Zoom,Daily,4,5,5,No Response,Easy navigation,More intuitive interface
+S085,Mother Teresa University,2nd,Economics,Male,25,MS Teams,Daily,3,3,3,Outdated interface,Assignment tracking,Strengthen security features
+S086,Saint Cyril and Methodious University,1st,Law,Male,18,Zoom,Monthly,4,5,5,Bandwidth issues,Video quality,Add more interactive tools
+S087,Mother Teresa University,3rd,Biology,Female,21,Blackboard Collaborate,Daily,5,5,5,No Response,Easy navigation,Add more interactive tools
+S088,Saint Cyril and Methodious University,4th,History,Female,18,Zoom,Daily,5,3,3,Security concerns,Integration features,Provide tutorials
+S089,South East European University,1st,Philosophy,Male,19,Blackboard Collaborate,Monthly,4,5,3,Technical glitches,Integration features,Provide tutorials
+S090,South East European University,2nd,Business Administration,Male,25,Blackboard Collaborate,Monthly,5,3,5,Bandwidth issues,Recording feature,Add more interactive tools
+S091,South East European University,1st,Biology,Female,23,Skype,Weekly,4,4,4,Outdated interface,Simplicity,Modernize user interface
+S092,Mother Teresa University,1st,Medicine,Female,22,Google Meet,Daily,4,3,4,Security concerns,Recording feature,Modernize user interface
+S093,Mother Teresa University,2nd,Business Administration,Female,23,MS Teams,Weekly,5,4,5,Bandwidth issues,Chat function,Strengthen security features
+S094,South East European University,2nd,Psychology,Female,19,Google Meet,Monthly,5,3,5,Outdated interface,Assignment tracking,Enhance login security
+S095,Saint Cyril and Methodious University,4th,Engineering,Female,25,Moodle,Daily,4,5,5,Login issues,Video quality,Improve reliability
+S096,South East European University,4th,Engineering,Female,25,Canvas,Daily,4,5,5,No Response,Simplicity,More intuitive interface
+S097,South East European University,1st,Psychology,Female,20,Google Meet,Daily,3,5,5,Security concerns,Integration features,Enhance login security
+S098,Mother Teresa University,4th,Business Administration,Female,23,MS Teams,Weekly,3,4,3,No Response,User interface,Optimize performance
+S099,South East European University,4th,Computer Science,Female,21,Google Classroom,Daily,4,3,4,No Response,User interface,Improve reliability
+S100,Mother Teresa University,1st,Engineering,Female,20,MS Teams,Monthly,5,4,4,Bandwidth issues,Breakout rooms,No Response
+S101,Mother Teresa University,1st,Literature,Female,23,Blackboard Collaborate,Monthly,3,5,5,Learning curve,Recording feature,Modernize user interface
+S102,Mother Teresa University,2nd,Computer Science,Female,25,Zoom,Weekly,4,5,4,Security concerns,Screen sharing,Strengthen security features
+S103,Mother Teresa University,3rd,Psychology,Male,24,Zoom,Weekly,5,4,5,Security concerns,Assignment tracking,Improved stability
+S104,South East European University,1st,Physics,Male,22,MS Teams,Daily,5,4,3,No Response,Integration features,More intuitive interface
+S105,South East European University,2nd,Medicine,Male,25,Moodle,Monthly,3,4,3,Login issues,Chat function,Optimize for low bandwidth
+S106,Saint Cyril and Methodious University,4th,Medicine,Female,20,Google Meet,Daily,4,4,4,Login issues,Breakout rooms,No Response
+S107,South East European University,4th,Law,Female,18,Skype,Weekly,3,5,5,Outdated interface,Familiarity,Optimize performance
+S108,South East European University,4th,Physics,Male,22,MS Teams,Monthly,4,4,5,Technical glitches,User interface,Modernize user interface
+S109,Mother Teresa University,4th,Chemistry,Female,20,MS Teams,Daily,5,5,4,Bandwidth issues,Chat function,Strengthen security features
+S110,South East European University,3rd,Chemistry,Male,25,Canvas,Monthly,5,4,3,Technical glitches,User interface,Strengthen security features
+S111,Saint Cyril and Methodious University,1st,Biology,Female,24,Google Meet,Monthly,3,5,3,Security concerns,Video quality,More intuitive interface
+S112,Mother Teresa University,3rd,Engineering,Female,18,Google Meet,Monthly,5,3,3,Learning curve,Collaboration tools,Enhance login security
+S113,Mother Teresa University,1st,History,Male,18,Moodle,Daily,5,4,4,Security concerns,Familiarity,Add more interactive tools
+S114,South East European University,2nd,History,Female,21,Google Meet,Daily,5,3,4,Bandwidth issues,Breakout rooms,Improve reliability
+S115,South East European University,2nd,Chemistry,Male,20,Moodle,Weekly,3,5,3,Login issues,Easy navigation,Improved stability
+S116,Mother Teresa University,2nd,Psychology,Male,19,Moodle,Daily,5,5,3,Technical glitches,Simplicity,Provide tutorials
+S117,Mother Teresa University,4th,Mathematics,Male,25,MS Teams,Weekly,4,3,3,Outdated interface,Chat function,Provide tutorials
+S118,Saint Cyril and Methodious University,3rd,Medicine,Male,20,Skype,Daily,4,3,5,Security concerns,Familiarity,Enhance login security
+S119,South East European University,1st,Art,Male,25,Zoom,Monthly,5,4,5,Learning curve,Video quality,Strengthen security features
+S120,Saint Cyril and Methodious University,4th,Medicine,Male,19,Google Classroom,Monthly,5,5,4,Login issues,Breakout rooms,Modernize user interface
