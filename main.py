@@ -3,8 +3,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Define the URL for the data source
-URL = 'https://raw.githubusercontent.com/aichie-IT/SVASS1/refs/heads/main/arts_faculty_data.csv'
+# --- LOAD DATA ---
+url = 'https://raw.githubusercontent.com/aichie-IT/SVASS1/refs/heads/main/student_dataset.csv'
+df = pd.read_csv(url)
 
 col1, col2, col3, col4 = st.columns(4)
    
@@ -13,154 +14,154 @@ col2.metric(label="PLO 3", value=f"3.5", help="PLO 3: Digital Skill", border=Tru
 col3.metric(label="PLO 4", value=f"4.0", help="PLO 4: Interpersonal Skill", border=True)
 col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", border=True)
 
-# Set Streamlit page configuration
+# --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="Scientific Visualization",
-    layout="wide"
+    page_title="Student Data Dashboard",
+    page_icon="🎓",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.title("Arts Faculty Data Analysis")
-st.markdown("---")
+# Fill missing values
+df['Challenges_Faced'].fillna('No Response', inplace=True)
+df['Suggestions_for_Improvement'].fillna('No Response', inplace=True)
 
-# --- 1. Data Loading and Caching ---
+# --- SIDEBAR ---
+st.sidebar.header("📊 Dashboard Controls")
+show_raw = st.sidebar.checkbox("Show Raw Data")
+if show_raw:
+    st.dataframe(df, use_container_width=True)
 
-@st.cache_data
-def load_data(url):
-    """Loads the CSV data from the URL, using caching for efficiency."""
-    try:
-        df = pd.read_csv(url)
-        return df
-    except Exception as e:
-        st.error(f"Error loading data from URL: {url}\n{e}")
-        return pd.DataFrame() # Return empty DataFrame on failure
+st.sidebar.markdown("---")
+st.sidebar.info("Select sections below to explore insights.")
 
-arts_df = load_data(URL)
+# --- HEADER ---
+st.title("🎓 Student Survey Dashboard")
+st.markdown("This dashboard provides insights into students’ online learning experiences and satisfaction levels.")
 
-if arts_df.empty:
-    st.stop() # Stop execution if data loading failed
-    
-# --- 2. Data Cleaning and Preparation for Visualizations ---
+# --- COLOR TEMPLATE ---
+color_theme = px.colors.sequential.Viridis
 
-# Coerce GPA columns to numeric for calculation (as done in the original code)
-arts_df['S.S.C (GPA)'] = pd.to_numeric(arts_df['S.S.C (GPA)'], errors='coerce')
-arts_df['H.S.C (GPA)'] = pd.to_numeric(arts_df['H.S.C (GPA)'], errors='coerce')
-
-# Define numerical survey columns for the correlation heatmap
-NUMERICAL_Q_COLUMNS = [
-    'Q3 [What was your expectation about the University as related to quality of resources?]',
-    'Q4 [What was your expectation about the University as related to quality of learning environment?]',
-    'Q5 [To what extent your expectation was met?]',
-    # Include other numerical columns if necessary, the original list was short
-]
-
-
-# --- 3. Visualization Sections ---
-
-st.header("1. Gender and Program Analysis")
+# --- ROW 1: Gender Distribution ---
 col1, col2 = st.columns(2)
 
-# --- A. Gender Distribution (Pie Chart & Bar Chart) ---
-if 'Gender' in arts_df.columns:
-    gender_counts_df = arts_df['Gender'].value_counts().reset_index()
-    gender_counts_df.columns = ['Gender', 'Count']
-
-    with col1:
-        st.subheader("Gender Distribution (Pie Chart)")
-        fig_pie = px.pie(
-            gender_counts_df,
-            values='Count',
-            names='Gender',
-            title='Gender Percentage',
-            hole=0.4
-        )
-        st.plotly_chart(fig_pie, use_container_width=True)
-
-    with col2:
-        st.subheader("Gender vs. Arts Program (Stacked Bar)")
-        # Calculate counts for stacked bar plot
-        gender_program_counts = arts_df.groupby(['Gender', 'Arts Program']).size().reset_index(name='Count')
-        
-        fig_stacked_bar = px.bar(
-            gender_program_counts, 
-            x='Gender', 
-            y='Count', 
-            color='Arts Program',
-            title='Count by Gender and Program'
-        )
-        st.plotly_chart(fig_stacked_bar, use_container_width=True)
-else:
-    st.warning("Skipping Gender analysis: 'Gender' column not found.")
-
-st.markdown("---")
-st.header("2. Academic Performance Distribution (Histograms)")
-col3, col4, col5 = st.columns(3)
-
-# --- B. H.S.C (GPA) Histogram ---
-with col3:
-    st.subheader("H.S.C (GPA) Distribution")
-    if 'H.S.C (GPA)' in arts_df.columns:
-        fig_hsc_hist = px.histogram(
-            arts_df.dropna(subset=['H.S.C (GPA)']), 
-            x='H.S.C (GPA)', 
-            nbins=10, 
-            title='H.S.C (GPA) Level'
-        )
-        st.plotly_chart(fig_hsc_hist, use_container_width=True)
-    else:
-        st.info("H.S.C (GPA) column not found.")
-
-# --- C. S.S.C (GPA) Histogram ---
-with col4:
-    st.subheader("S.S.C (GPA) Distribution")
-    if 'S.S.C (GPA)' in arts_df.columns:
-        fig_ssc_hist = px.histogram(
-            arts_df.dropna(subset=['S.S.C (GPA)']), 
-            x='S.S.C (GPA)', 
-            nbins=10, 
-            title='S.S.C (GPA) Level'
-        )
-        st.plotly_chart(fig_ssc_hist, use_container_width=True)
-    else:
-        st.info("S.S.C (GPA) column not found.")
-
-# --- D. Coaching Center Score Distribution (Histogram) ---
-with col5:
-    st.subheader("Coaching Center Attendance")
-    coaching_col = 'Did you ever attend a Coaching center?'
-    if coaching_col in arts_df.columns:
-        fig_coaching_hist = px.histogram(
-            arts_df, 
-            x=coaching_col, 
-            title='Coaching Center Score Distribution'
-        )
-        st.plotly_chart(fig_coaching_hist, use_container_width=True)
-    else:
-        st.info(f"'{coaching_col}' column not found.")
-
-
-st.markdown("---")
-st.header("3. Correlation and Relationship Analysis")
-
-# --- E. S.S.C vs H.S.C Scatter Plot ---
-st.subheader("S.S.C (GPA) vs. H.S.C (GPA) Scatter Plot")
-scatter_data = arts_df.dropna(subset=['S.S.C (GPA)', 'H.S.C (GPA)'])
-
-if not scatter_data.empty:
-    fig_scatter = px.scatter(
-        scatter_data, 
-        x='S.S.C (GPA)', 
-        y='H.S.C (GPA)', 
-        title='Relationship between S.S.C and H.S.C GPAs',
-        hover_data=['Gender', 'Arts Program'] # Add hover details for interactivity
+with col1:
+    gender_counts = df['Gender'].value_counts().reset_index()
+    gender_counts.columns = ['Gender', 'Count']
+    fig_gender_pie = px.pie(
+        gender_counts,
+        names='Gender',
+        values='Count',
+        title='Gender Distribution (%)',
+        color_discrete_sequence=color_theme,
+        hole=0.3
     )
-    st.plotly_chart(fig_scatter, use_container_width=True)
-else:
-    st.info("Skipping Scatter Plot: Not enough valid data points in S.S.C (GPA) and H.S.C (GPA).")
+    fig_gender_pie.update_traces(textinfo='percent+label')
+    st.plotly_chart(fig_gender_pie, use_container_width=True)
 
+with col2:
+    fig_gender_bar = px.bar(
+        gender_counts,
+        x='Gender',
+        y='Count',
+        title='Gender Distribution Count',
+        text='Count',
+        color='Gender',
+        color_discrete_sequence=color_theme
+    )
+    fig_gender_bar.update_traces(textposition='outside')
+    st.plotly_chart(fig_gender_bar, use_container_width=True)
 
-# --- Data Interpretation (NEW SECTION) ---
-st.header("Data Interpretation")
-st.markdown("""
-Based on the visual analysis of the Faculty of Arts data above, the visual data on gender distribution reveals the dominant demographics in the Arts program. The stacked bar chart further explains which particular Arts Program is most popular among that gender group. While the visual data from the histogram and scatter plot show a clear and strong positive correlation between students' S.S.C. (GPA) and H.S.C. (GPA), indicating that performance in early schooling is highly predictive of later academic success.
-""")
-# ---------------------------------------------
+# --- ROW 2: Gender vs Online Tool ---
+st.subheader("💻 Online Tools Used by Gender")
+gender_tool = df.groupby(['Gender', 'Online_Tool_Used']).size().reset_index(name='Count')
+fig_gender_tool = px.bar(
+    gender_tool,
+    x='Gender',
+    y='Count',
+    color='Online_Tool_Used',
+    barmode='group',
+    title='Online Tools Used by Gender',
+    color_discrete_sequence=color_theme
+)
+st.plotly_chart(fig_gender_tool, use_container_width=True)
+
+# --- ROW 3: Impact and Satisfaction ---
+col3, col4 = st.columns(2)
+
+with col3:
+    fig_impact = px.histogram(
+        df,
+        x='Impact_on_Learning',
+        nbins=10,
+        title='Distribution of Impact on Learning',
+        color_discrete_sequence=color_theme
+    )
+    fig_impact.update_layout(xaxis_title='Impact Score', yaxis_title='Frequency')
+    st.plotly_chart(fig_impact, use_container_width=True)
+
+with col4:
+    fig_satisfaction = px.histogram(
+        df,
+        x='Satisfaction_Score',
+        nbins=10,
+        title='Distribution of Satisfaction Scores',
+        color_discrete_sequence=color_theme
+    )
+    fig_satisfaction.update_layout(xaxis_title='Satisfaction Score', yaxis_title='Frequency')
+    st.plotly_chart(fig_satisfaction, use_container_width=True)
+
+# --- ROW 4: Satisfaction by Year ---
+st.subheader("📅 Satisfaction Score by Year of Study")
+fig_box = px.box(
+    df,
+    x='Year_of_Study',
+    y='Satisfaction_Score',
+    color='Year_of_Study',
+    color_discrete_sequence=color_theme,
+    title='Satisfaction Score Distribution by Year'
+)
+st.plotly_chart(fig_box, use_container_width=True)
+
+# --- ROW 5: Distribution by Major ---
+col5, col6 = st.columns([1.3, 1])
+
+with col5:
+    fig_major = px.bar(
+        df['Major'].value_counts().reset_index(),
+        x='count',
+        y='index',
+        orientation='h',
+        title='Student Distribution by Major',
+        color_discrete_sequence=color_theme
+    )
+    fig_major.update_layout(xaxis_title='Count', yaxis_title='Major')
+    st.plotly_chart(fig_major, use_container_width=True)
+
+with col6:
+    fig_usage = px.bar(
+        df['Usage_Frequency'].value_counts().reset_index(),
+        x='index',
+        y='count',
+        title='Usage Frequency of Online Tools',
+        color_discrete_sequence=color_theme
+    )
+    fig_usage.update_layout(xaxis_title='Usage Frequency', yaxis_title='Count')
+    st.plotly_chart(fig_usage, use_container_width=True)
+
+# --- ROW 6: Challenges Faced ---
+st.subheader("🚧 Challenges Faced by Students")
+fig_challenges = px.bar(
+    df['Challenges_Faced'].value_counts().reset_index(),
+    x='count',
+    y='index',
+    orientation='h',
+    title='Challenges Faced by Students',
+    color_discrete_sequence=color_theme
+)
+fig_challenges.update_layout(xaxis_title='Count', yaxis_title='Challenges')
+st.plotly_chart(fig_challenges, use_container_width=True)
+
+# --- FOOTER ---
+st.markdown("---")
+st.caption("© 2025 Student Dashboard | Designed with ❤️ using Streamlit & Plotly")
