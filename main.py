@@ -2,13 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-col1, col2, col3, col4 = st.columns(4)
-   
-col1.metric(label="PLO 2", value=f"3.3", help="PLO 2: Cognitive Skill", border=True)
-col2.metric(label="PLO 3", value=f"3.5", help="PLO 3: Digital Skill", border=True)
-col3.metric(label="PLO 4", value=f"4.0", help="PLO 4: Interpersonal Skill", border=True)
-col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", border=True)
-
 # --- Page Setup ---
 st.set_page_config(
     page_title="Student Insights Dashboard",
@@ -53,23 +46,23 @@ st.markdown("Explore patterns in student learning experiences and online tool us
 
 st.markdown("---")
 
-# --- Summary Cards ---
+# --- Summary Boxs ---
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("👩‍🎓 Total Students", f"{len(filtered_df):,}")
+    st.metric("Total Students", f"{len(filtered_df):,}", help="PLO 2: Cognitive Skill", border=True)
 
 with col2:
     avg_satisfaction = filtered_df["Satisfaction_Score"].mean()
-    st.metric("😊 Avg. Satisfaction", f"{avg_satisfaction:.2f}")
+    st.metric("Avg. Satisfaction", f"{avg_satisfaction:.2f}", help="PLO 2: Cognitive Skill", border=True)
 
 with col3:
     avg_impact = filtered_df["Impact_on_Learning"].mean()
-    st.metric("📘 Avg. Learning Impact", f"{avg_impact:.2f}")
+    st.metric("Avg. Learning Impact", f"{avg_impact:.2f}", help="PLO 2: Cognitive Skill", border=True)
 
 with col4:
     unique_tools = filtered_df["Online_Tool_Used"].nunique()
-    st.metric("💻 Online Tools Used", f"{unique_tools}")
+    st.metric("Online Tools Used", f"{unique_tools}", help="PLO 2: Cognitive Skill", border=True)
 
 st.markdown("---")
 
