@@ -50,19 +50,19 @@ st.markdown("---")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("Total Students", f"{len(filtered_df):,}", help="PLO 2: Cognitive Skill", border=True)
+    st.metric("Total Students", f"{len(filtered_df):,}", help="PLO 2: Total Students", border=True)
 
 with col2:
     avg_satisfaction = filtered_df["Satisfaction_Score"].mean()
-    st.metric("Avg. Satisfaction", f"{avg_satisfaction:.2f}", help="PLO 2: Cognitive Skill", border=True)
+    st.metric("Avg. Satisfaction", f"{avg_satisfaction:.2f}", help="PLO 2: Average of Satisfaction", border=True)
 
 with col3:
     avg_impact = filtered_df["Impact_on_Learning"].mean()
-    st.metric("Avg. Learning Impact", f"{avg_impact:.2f}", help="PLO 2: Cognitive Skill", border=True)
+    st.metric("Avg. Learning Impact", f"{avg_impact:.2f}", help="PLO 2: Average of Learning Impact", border=True)
 
 with col4:
     unique_tools = filtered_df["Online_Tool_Used"].nunique()
-    st.metric("Online Tools Used", f"{unique_tools}", help="PLO 2: Cognitive Skill", border=True)
+    st.metric("Online Tools Used", f"{unique_tools}", help="PLO 2: Online Tools Used", border=True)
 
 st.markdown("---")
 
