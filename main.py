@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- Theme Colors --- 
+# --- Theme Colors ---
 color_theme = px.colors.sequential.Viridis
 
 # --- Load Dataset ---
@@ -46,23 +46,23 @@ st.markdown("Explore patterns in student learning experiences and online tool us
 
 st.markdown("---")
 
-# --- Summary Boxes ---
+# --- Summary Boxs ---
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("Total Students", f"{len(filtered_df):,}", help="PLO 2: Total Students")
+    st.metric("Total Students", f"{len(filtered_df):,}", help="PLO 2: Total Students", border=True)
 
 with col2:
     avg_satisfaction = filtered_df["Satisfaction_Score"].mean()
-    st.metric("Avg. Satisfaction", f"{avg_satisfaction:.2f}", help="PLO 2: Average of Satisfaction")
+    st.metric("Avg. Satisfaction", f"{avg_satisfaction:.2f}", help="PLO 2: Average of Satisfaction", border=True)
 
 with col3:
     avg_impact = filtered_df["Impact_on_Learning"].mean()
-    st.metric("Avg. Learning Impact", f"{avg_impact:.2f}", help="PLO 2: Average of Learning Impact")
+    st.metric("Avg. Learning Impact", f"{avg_impact:.2f}", help="PLO 2: Average of Learning Impact", border=True)
 
 with col4:
     unique_tools = filtered_df["Online_Tool_Used"].nunique()
-    st.metric("Online Tools Used", f"{unique_tools}", help="PLO 2: Online Tools Used")
+    st.metric("Online Tools Used", f"{unique_tools}", help="PLO 2: Online Tools Used", border=True)
 
 st.markdown("---")
 
@@ -114,7 +114,7 @@ with tab1:
             orientation="h",
             title="Student Distribution by Major",
             color="Count",
-            color_continuous_scale=px.colors.sequential.Peach
+            color_continuous_scale=color_theme
         )
         fig_major.update_layout(xaxis_title="Count", yaxis_title="Major")
         st.plotly_chart(fig_major, use_container_width=True)
@@ -128,7 +128,7 @@ with tab1:
             y="Count",
             title="Usage Frequency of Online Tools",
             color="Count",
-            color_continuous_scale=px.colors.sequential.Peach
+            color_continuous_scale=color_theme
         )
         fig_usage.update_layout(xaxis_title="Usage Frequency", yaxis_title="Count")
         st.plotly_chart(fig_usage, use_container_width=True)
@@ -185,7 +185,7 @@ with tab3:
         orientation="h",
         title="Top Challenges in Online Learning",
         color="Count",
-        color_continuous_scale=px.colors.sequential.Peach
+        color_continuous_scale=color_theme
     )
     fig_challenges.update_layout(xaxis_title="Count", yaxis_title="Challenges")
     st.plotly_chart(fig_challenges, use_container_width=True)
