@@ -2,9 +2,16 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+col1, col2, col3, col4 = st.columns(4)
+   
+col1.metric(label="PLO 2", value=f"3.3", help="PLO 2: Cognitive Skill", border=True)
+col2.metric(label="PLO 3", value=f"3.5", help="PLO 3: Digital Skill", border=True)
+col3.metric(label="PLO 4", value=f"4.0", help="PLO 4: Interpersonal Skill", border=True)
+col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", border=True)
+
 # --- Page Setup ---
 st.set_page_config(
-    page_title="Student Dashboard",
+    page_title="Student Insights Dashboard",
     page_icon="🎓",
     layout="wide"
 )
@@ -19,94 +26,54 @@ df = pd.read_csv(url)
 # --- Sidebar Filters ---
 st.sidebar.header("🔍 Filter Data")
 
-year_options = df["Year_of_Study"].dropna().unique()
-major_options = df["Major"].dropna().unique()
+year_options = sorted(df["Year_of_Study"].dropna().unique())
+major_options = sorted(df["Major"].dropna().unique())
 
 selected_year = st.sidebar.multiselect(
     "Select Year of Study:",
-    options=sorted(year_options),
+    options=year_options,
     default=year_options
 )
 
 selected_major = st.sidebar.multiselect(
     "Select Major:",
-    options=sorted(major_options),
+    options=major_options,
     default=major_options
 )
 
-# --- Filter the Data ---
+# --- Filter Data ---
 filtered_df = df[
     (df["Year_of_Study"].isin(selected_year)) &
     (df["Major"].isin(selected_major))
 ]
 
-# --- MAIN TITLE ---
+# --- Main Header ---
 st.title("🎓 Student Insights Dashboard")
-st.markdown("Explore student learning experiences, satisfaction, and skill outcomes after COVID-19.")
-
-# --- STYLED SUMMARY BOX ---
-st.markdown("""
-<style>
-.summary-box {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-.metric-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #d1e3ff;
-}
-.metric-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: white;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# --- COMBINED SUMMARY METRICS ---
-with st.container():
-    st.markdown('<div class="summary-box">', unsafe_allow_html=True)
-
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.markdown('<div class="metric-title">👩‍🎓 Total Students</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="metric-value">{len(filtered_df):,}</div>', unsafe_allow_html=True)
-
-    with col2:
-        avg_satisfaction = filtered_df["Satisfaction_Score"].mean()
-        st.markdown('<div class="metric-title">😊 Avg. Satisfaction</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="metric-value">{avg_satisfaction:.2f}</div>', unsafe_allow_html=True)
-
-    with col3:
-        avg_impact = filtered_df["Impact_on_Learning"].mean()
-        st.markdown('<div class="metric-title">📘 Avg. Learning Impact</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="metric-value">{avg_impact:.2f}</div>', unsafe_allow_html=True)
-
-    with col4:
-        unique_tools = filtered_df["Online_Tool_Used"].nunique()
-        st.markdown('<div class="metric-title">💻 Online Tools Used</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="metric-value">{unique_tools}</div>', unsafe_allow_html=True)
-
-    st.markdown("</div>", unsafe_allow_html=True)
-
-# --- PLO METRICS SECTION ---
-st.markdown('<div class="summary-box">', unsafe_allow_html=True)
-col1, col2, col3, col4 = st.columns(4)
-
-col1.metric(label="PLO 2 — Cognitive Skill", value="3.3", help="Average cognitive skill level")
-col2.metric(label="PLO 3 — Digital Skill", value="3.5", help="Average digital skill level")
-col3.metric(label="PLO 4 — Interpersonal Skill", value="4.0", help="Average interpersonal skill level")
-col4.metric(label="PLO 5 — Communication Skill", value="4.3", help="Average communication skill level")
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("Explore patterns in student learning experiences and online tool usage after COVID-19.")
 
 st.markdown("---")
 
-# --- TABS ---
+# --- Summary Cards ---
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("👩‍🎓 Total Students", f"{len(filtered_df):,}")
+
+with col2:
+    avg_satisfaction = filtered_df["Satisfaction_Score"].mean()
+    st.metric("😊 Avg. Satisfaction", f"{avg_satisfaction:.2f}")
+
+with col3:
+    avg_impact = filtered_df["Impact_on_Learning"].mean()
+    st.metric("📘 Avg. Learning Impact", f"{avg_impact:.2f}")
+
+with col4:
+    unique_tools = filtered_df["Online_Tool_Used"].nunique()
+    st.metric("💻 Online Tools Used", f"{unique_tools}")
+
+st.markdown("---")
+
+# --- Tabs ---
 tab1, tab2, tab3 = st.tabs(["📊 Overview", "📈 Scores", "🚧 Challenges"])
 
 # --- TAB 1: OVERVIEW ---
