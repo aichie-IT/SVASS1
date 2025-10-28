@@ -17,7 +17,7 @@ url = "https://raw.githubusercontent.com/aichie-IT/SVASS1/refs/heads/main/studen
 df = pd.read_csv(url)
 
 # --- Sidebar Filters ---
-st.sidebar.header("🔍 Filter Data")
+st.sidebar.header("Filter Data")
 
 year_options = sorted(df["Year_of_Study"].dropna().unique())
 major_options = sorted(df["Major"].dropna().unique())
