@@ -9,9 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- Custom Pastel Color Theme ---
-# Soft pastel tones for consistent gentle visuals
-color_theme = ["#A8DADC", "#F7B267", "#F5CAC3", "#84A59D", "#F28482", "#B5E48C", "#9D8189", "#FFD6A5", "#CDB4DB"]
+# --- Theme Colors --- 
+color_theme = px.colors.sequential.Viridis
 
 # --- Load Dataset ---
 url = "https://raw.githubusercontent.com/aichie-IT/SVASS1/refs/heads/main/student_dataset.csv"
